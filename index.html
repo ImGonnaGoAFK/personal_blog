@@ -6,30 +6,27 @@
         <link rel="stylesheet" href="./assets/css/styles.css">
         <title>My First Blog</title>
     </head>
+    <header><button id="changeMode">light and dark mode</button></header>
     <body>
-        <section class="logo">
-            <img src="#" alt="My blog's logo"/>
-        </section>
-        <section class="entry">
+        <div class="logo">
+            <img src="./assets/images/image.png" alt="My blog's logo"/>
+        </div>
+        <div class="entry">
             <h1>What's on your mind?</h1>
             <main>
-                <ul>
-                    <li>
+                <!-- <ul class="userInput"> -->
                         <label for="username-input">Username</label>
                         <input type="text" id="username-input" />
-                    </li>
-                    <li>
                         <label for="title-input">Title</label>
                         <input type="text" id="title-input"  />
-                    </li>
-                    <li>
+                
                         <label for="content-input">Content</label>
                         <textarea id="content-input"></textarea>
-                    </li>
-                </ul>
-                <button id="submit">submit</button>
+                    <!-- </li>
+                </ul> -->
+                <button id="submit" href="#">submit</button>
             </main>
-        </section>
+        </div>
         <script src="./assets/js/logic.js"></script>
     </body>
 </html>
