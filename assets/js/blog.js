@@ -10,9 +10,9 @@ function renderPost() {
     blogPostEl.innerHTML ='';
 
     for (let i =0; i < tempBlogObject.length; i++) {
-        const blogPost = JSON.stringify(tempBlogObject[i], null, 4);
+        const blogPost = JSON.stringify(tempBlogObject[i]);
 
-        const post = document.createElement('li');
+        const post = $('<li>').text(blogPost);
         post.textContent = blogPost;
 
         console.log(blogPost);
