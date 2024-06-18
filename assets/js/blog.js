@@ -34,23 +34,9 @@ function renderPost() {
 
 }
 
-
-
-// function addToBlogList(blog){
-//     const singlePostEl = $('<li>')
-
-//     var dataIndexForThisBlog = blogList.length -1;
-//     blogPostEl.appendChild(singlePostEl)
-// }
-
 //Try and call old blog post when page is loads
 function init () {
-    // [{wallet: "4132"}]
-    // '[{"wallet": "4123"}]'
-    // console.log("INITTTTT")
-    // console.log(localStorage.getItem("storageInfo"))
     const storedPosts = JSON.parse(localStorage.getItem('storageInfo'));
-    // console.log("StoredPost: ", storedPosts)
     if (storedPosts !== null) {
         blogList = storedPosts;
     }       

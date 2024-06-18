@@ -25,3 +25,21 @@ body {
     background-color: white;
     color: black;
 }
+
+.blogTitle {
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 10px black solid;
+    border-bottom: 3px black solid;
+}
+
+.blogContent {
+    border: 3px teal dotted;
+}
+
+li {
+    border: 5px solid black;
+    list-style: numbered;
+    align-items: space-between;
+    margin: 10px;
+}
