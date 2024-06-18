@@ -1,7 +1,10 @@
 const backBtn = document.querySelector('#back');
 const blogPostEl = document.querySelector('#blog-posts');
+const pageMode = document.querySelector('.dark');
+const changeMode = document.querySelector('#changeMode')
 
 let tempBlogObject = [];
+let mode = 'dark';
 
 function renderPost() {
     blogPostEl.innerHTML ='';
@@ -34,3 +37,25 @@ location.href = "index.html"
 })
 
 init();
+
+changeMode.addEventListener('click', function (){
+    if (mode === 'dark') {
+        mode = 'light';
+        pageMode.setAttribute('class','light')
+
+        if(changeMode.innerText == "Light") {
+            changeMode.innerText = "Dark"
+        }
+        else {changeMode.innerText = "Light"}
+    }
+    
+    else {
+        mode = 'dark'
+        pageMode.setAttribute('class', 'dark')
+        
+        if(changeMode.innerText == "Dark") {
+            changeMode.innerText = "Light"
+        }
+        else {changeMode.innerText = "Dark"}
+    }
+})
