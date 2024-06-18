@@ -1,36 +1,67 @@
 const backBtn = document.querySelector('#back');
 const blogPostEl = document.querySelector('#blog-posts');
 const pageMode = document.querySelector('.dark');
-const changeMode = document.querySelector('#changeMode')
+const themeToggleEl = document.querySelector('#changeMode')
+const clearBtnEl = document.querySelector('#clear')
 
-let tempBlogObject = [];
+let blogList = [];
 let mode = 'dark';
 
-// function renderPost() {
-//     blogPostEl.innerHTML ='';
+function renderPost() {
+    blogPostEl.innerHTML ='';
 
-//     for (let i =0; i < tempBlogObject.length; i++) {
-//         const blogPost = JSON.stringify(tempBlogObject[i]);
+    for (let i =0; i < blogList.length; i++) {
+        const blogPost =blogList[i];
 
-//         const post = $('<li>').text(blogPost);
-//         post.textContent = blogPost;
+        const singlePostEl = document.createElement("li");
+        const usernameEl = document.createElement("p");
+        const titleEl = document.createElement("p");
+        const contentEl = document.createElement("p");
 
-//         console.log(blogPost);
-//         post.setAttribute('data-index', i);
+        titleEl.textContent = blogPost.title;
+        usernameEl.textContent = 'Created by ' + blogPost.username;
+        contentEl.textContent = blogPost.content;
 
-//         blogPostEl.appendChild(post);
-//     }
+        titleEl.setAttribute('class', 'blogTitle');
+        usernameEl.setAttribute('class', 'blogUser');
+        contentEl.setAttribute('class', 'blogContent');
 
+        blogPostEl.appendChild(singlePostEl);
+        singlePostEl.appendChild(titleEl);
+        singlePostEl.appendChild(usernameEl);
+        singlePostEl.appendChild(contentEl);
+    }
+
+}
+
+
+
+// function addToBlogList(blog){
+//     const singlePostEl = $('<li>')
+
+//     var dataIndexForThisBlog = blogList.length -1;
+//     blogPostEl.appendChild(singlePostEl)
 // }
-// Try and call old blog post when page is loads
+
+//Try and call old blog post when page is loads
 function init () {
-    const storedPost = JSON.parse(localStorage.getItem('storageInfo'));
-    if (storedPost !== null) {
-        tempBlogObject = storedPost;
+    // [{wallet: "4132"}]
+    // '[{"wallet": "4123"}]'
+    // console.log("INITTTTT")
+    // console.log(localStorage.getItem("storageInfo"))
+    const storedPosts = JSON.parse(localStorage.getItem('storageInfo'));
+    // console.log("StoredPost: ", storedPosts)
+    if (storedPosts !== null) {
+        blogList = storedPosts;
     }       
 
-    // renderPost();
+    renderPost();
 }
+
+clearBtnEl.addEventListener('click', function () {
+    localStorage.clear();
+    window.location.reload();
+})
 
 backBtn.addEventListener('click', function(event) {
 location.href = "index.html"
@@ -38,24 +69,24 @@ location.href = "index.html"
 
 init();
 
-changeMode.addEventListener('click', function (){
+themeToggleEl.addEventListener('click', function (){
     if (mode === 'dark') {
         mode = 'light';
         pageMode.setAttribute('class','light')
 
-        if(changeMode.innerText == "Light") {
-            changeMode.innerText = "Dark"
+        if(themeToggleEl.innerText == "Light") {
+            themeToggleEl.innerText = "Dark"
         }
-        else {changeMode.innerText = "Light"}
+        else {themeToggleEl.innerText = "Light"}
     }
     
     else {
         mode = 'dark'
         pageMode.setAttribute('class', 'dark')
         
-        if(changeMode.innerText == "Dark") {
-            changeMode.innerText = "Light"
+        if(themeToggleEl.innerText == "Dark") {
+            themeToggleEl.innerText = "Light"
         }
-        else {changeMode.innerText = "Dark"}
+        else {themeToggleEl.innerText = "Dark"}
     }
 })
