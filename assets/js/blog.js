@@ -6,22 +6,22 @@ const changeMode = document.querySelector('#changeMode')
 let tempBlogObject = [];
 let mode = 'dark';
 
-function renderPost() {
-    blogPostEl.innerHTML ='';
+// function renderPost() {
+//     blogPostEl.innerHTML ='';
 
-    for (let i =0; i < tempBlogObject.length; i++) {
-        const blogPost = JSON.stringify(tempBlogObject[i]);
+//     for (let i =0; i < tempBlogObject.length; i++) {
+//         const blogPost = JSON.stringify(tempBlogObject[i]);
 
-        const post = $('<li>').text(blogPost);
-        post.textContent = blogPost;
+//         const post = $('<li>').text(blogPost);
+//         post.textContent = blogPost;
 
-        console.log(blogPost);
-        post.setAttribute('data-index', i);
+//         console.log(blogPost);
+//         post.setAttribute('data-index', i);
 
-        blogPostEl.appendChild(post);
-    }
+//         blogPostEl.appendChild(post);
+//     }
 
-}
+// }
 // Try and call old blog post when page is loads
 function init () {
     const storedPost = JSON.parse(localStorage.getItem('storageInfo'));
@@ -29,7 +29,7 @@ function init () {
         tempBlogObject = storedPost;
     }       
 
-    renderPost();
+    // renderPost();
 }
 
 backBtn.addEventListener('click', function(event) {

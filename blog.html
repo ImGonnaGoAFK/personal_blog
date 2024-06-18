@@ -8,32 +8,37 @@
     <title>My Blog</title>
 </head>
 <!--added using bootstrap-->
-<nav class="navbar fixed-top bg-body-tertiary dark">
-    <div class="container-fluid">
-        <h1>My Blog</h1>
-        <ul>
+<main class="dark">
+    <nav class="navbar fixed-top bg-body-tertiary dark">
+        <div class="container-fluid">
+            <h1>My Blog</h1>
+            <ul>
+                <button id="back">Back</button>
+                <button id="changeMode">Light</button>
+            </ul>
+        </div>
+    </nav>
+    <!-- <header>
+        <h1 class = "page title">
+            My Blog
+        </h1>
+        <nav>
             <button id="back">Back</button>
             <button id="changeMode">Light</button>
-        </ul>
-    </div>
-</nav>
-<!-- <header>
-    <h1 class = "page title">
-        My Blog
-    </h1>
-    <nav>
-        <button id="back">Back</button>
-        <button id="changeMode">Light</button>
-    </nav>
-</header> -->
+        </nav>
+    </header> -->
+    <body class = "dark">
+        <div class="card">
+            <h2>Blog Post #1</h2>
+            <ul id="blog-posts"></ul>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="./assets/js/blog.js"></script>
+    </body>
+</main>
 
-<body class = "dark">
-    <div class="card">
-        <h2>Blog Post #1</h2>
-        <ul id="blog-posts"></ul>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="./assets/js/blog.js"></script>
-</body>
+<footer>
+    <h3>Created by <a href="https://imgonnagoafk.github.io/portfolio/">Kevin Hoang</a></h3>
+</footer>
 </html>
