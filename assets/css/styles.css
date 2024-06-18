@@ -27,12 +27,16 @@ body {
 }
 
 /*Dark mode*/
-/* .dark {
+.dark {
     background-color: #243447;
-    height: 100vh;
     color: #bebebe;
 }
 
-.dark {
-    
-} */
+.light {
+    background-color: white;
+    color: black;
+}
+
+#sun{
+    background: url(/assets/images/sun.png) no-repeat;
+}
