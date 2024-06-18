@@ -4,28 +4,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/styles.css">
-        <title>My First Blog</title>
+        <title>Blog Submission Page</title>
     </head>
-    <header><button id="changeMode">light and dark mode</button></header>
+    <nav>
+    <header class="dark">
+        <button id="changeMode">
+            <i id="moon"></i>
+            <i id="sun"></i>
+        </button>
+    </header>
+    </nav>
     <body>
-        <div class="logo">
-            <img src="./assets/images/image.png" alt="My blog's logo"/>
-        </div>
-        <div class="entry">
-            <h1>What's on your mind?</h1>
-            <main>
-                <!-- <ul class="userInput"> -->
-                        <label for="username-input">Username</label>
-                        <input type="text" id="username-input" />
-                        <label for="title-input">Title</label>
-                        <input type="text" id="title-input"  />
-                
-                        <label for="content-input">Content</label>
-                        <textarea id="content-input"></textarea>
-                    <!-- </li>
-                </ul> -->
-                <button id="submit">submit</button>
-            </main>
+        <div class="dark">
+            <div class="logo">
+                <img src="./assets/images/image.png" alt="My blog's logo"/>
+            </div>
+
+            <div class="entry">
+                <h1>What's on your mind?</h1>
+                <main>
+                    <label for="username-input">Username</label>
+                    <input type="text" id="username-input" />
+                    <label for="title-input">Title</label>
+                    <input type="text" id="title-input"  />
+            
+                    <label for="content-input">Content</label>
+                    <textarea id="content-input"></textarea>
+                    <button id="submit">submit</button>
+                </main>
+            </div>
         </div>
         <script src="./assets/js/form.js"></script>
         <script src="./assets/js/logic.js"></script>

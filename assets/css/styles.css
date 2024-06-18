@@ -9,10 +9,6 @@ body {
     margin: 20px;
 }
 
-li {
- : none;
-}
-
 .entry {
     height: 100%;
     flex: 0 0 auto;
@@ -29,3 +25,14 @@ li {
     flex-direction: column;
     align-items: right;
 }
+
+/*Dark mode*/
+/* .dark {
+    background-color: #243447;
+    height: 100vh;
+    color: #bebebe;
+}
+
+.dark {
+    
+} */

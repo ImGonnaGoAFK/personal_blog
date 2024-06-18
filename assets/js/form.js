@@ -3,11 +3,7 @@ const titleInput = document.querySelector('#title-input');
 const contentInput = document.querySelector('#content-input');
 const submitBtn = document.querySelector('#submit');
 
-let tempBlogObject = [{
-    username: [],
-    title: [],
-    content: [],
-}]
+let tempBlogObject = []
 
 function updateLocalStorage() {
     localStorage.setItem('storageInfo', JSON.stringify(tempBlogObject));
@@ -20,10 +16,18 @@ submitBtn.addEventListener('click', function (event) {
         title: titleInput.value.trim(),
         contentInput: contentInput.value.trim(),
     };
+    while ((usernameInput === "") || (titleInput === "") || (contentInput === "")) {
+        prompt("please make sure all fields are filled in."); }
     tempBlogObject.push(blogEntry);
 
-    if ((usernameInput === " ") || (titleInput === " ") || (contentInput === " ")) {
-        return;
-    }
+    usernameInput.value = '';
+    titleInput.value ='';
+    contentInput.value ='';
+
+    // while ((usernameInput === " ") || (titleInput === " ") || (contentInput === " ")) {
+    //     prompt("please make sure all fields are filled in.");
+    // }
     updateLocalStorage();
+
+    location.href = "blog.html"
 });
