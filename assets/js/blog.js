@@ -3,6 +3,7 @@ const blogPostEl = document.querySelector('#blog-posts');
 const pageMode = document.querySelector('.dark');
 const themeToggleEl = document.querySelector('#changeMode')
 const clearBtnEl = document.querySelector('#clear')
+const navBarEl = document.querySelector('.navbar')
 
 let blogList = [];
 let mode = 'dark';

@@ -1,0 +1,40 @@
+nav {
+    button {
+        float:right;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+body {
+    margin-top: 100px;
+    font-family: sans-serif;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+form {
+    display: block;
+}
+/*Dark mode*/
+.dark {
+    background-color: #243447;
+    color: #bebebe
+}
+
+/*Light mode*/
+.light {
+    background-color: white;
+    color: black;
+}
+
+#sun{
+    background: url(/assets/images/sun.png) no-repeat;
+}

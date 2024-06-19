@@ -5,6 +5,7 @@ const submitBtn = document.querySelector('#submit');
 const pageMode = document.querySelector('.dark');
 const changeMode = document.querySelector('#changeMode')
 
+
 let blogList = [];
 
 let mode = 'dark';
@@ -12,18 +13,23 @@ let mode = 'dark';
 function updateLocalStorage() {
     localStorage.setItem('storageInfo', JSON.stringify(blogList));
 }
-
+let filledInput = true;
 submitBtn.addEventListener('click', function (event) {
     event.preventDefault();
+
+    if ((usernameInput.value === "") || (titleInput.value === "") || (contentInput.value === "")) {
+        alert("please make sure all fields are filled in."); 
+        filledInput = false;
+    }
+    else {
+        filledInput = true;
+    }
     let blogEntry = {
         username: usernameInput.value.trim(),
         title: titleInput.value.trim(),
         content: contentInput.value.trim(),
     };
-    while ((usernameInput === "") || (titleInput === "") || (contentInput === "")) {
-        prompt("please make sure all fields are filled in."); }
-    blogList.push(blogEntry);
-
+    
     usernameInput.value = '';
     titleInput.value ='';
     contentInput.value ='';
@@ -31,9 +37,11 @@ submitBtn.addEventListener('click', function (event) {
     // while ((usernameInput === " ") || (titleInput === " ") || (contentInput === " ")) {
     //     prompt("please make sure all fields are filled in.");
     // }
-    updateLocalStorage();
-
+    if (filledInput) {
     location.href = "blog.html"
+    blogList.push(blogEntry);
+    updateLocalStorage();
+    }
 });
 
 changeMode.addEventListener('click', function (){

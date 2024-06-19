@@ -14,7 +14,9 @@ body {
     justify-content: center;
     
 }
-
+h2 {
+    text-align: center;
+}
 
 .dark {
     background-color: #243447;
@@ -42,4 +44,11 @@ li {
     list-style: numbered;
     align-items: space-between;
     margin: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
 }
